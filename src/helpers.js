@@ -1,4 +1,4 @@
-import { SEMANTIC_NODES } from "./constants.js";
+import { SEMANTIC_NODES, OS_TYPES, OS } from "./constants.js";
 
 export function get(id) {
   return document.getElementById(id);
@@ -139,7 +139,14 @@ export function rightClick(element) {
 }
 
 export function ctrlLeftClick(element) {
-  element.dispatchEvent(new MouseEvent("click", { ctrlKey: true }));
+  switch (OS) {
+    case OS_TYPES.MAC:
+      element.dispatchEvent(new MouseEvent("click", { metaKey: true }));
+      break;
+    case OS_TYPES.PC:
+      element.dispatchEvent(new MouseEvent("click", { ctrlKey: true }));
+      break;
+  }
 }
 
 export function pressFunctionKey(n) {
