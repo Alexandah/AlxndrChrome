@@ -2,7 +2,7 @@ function isStdObj(obj) {
   typeof obj === "object" && !Array.isArray(obj) && obj !== null;
 }
 
-function makeNode(type, children = [], attributes = {}) {
+function makeNode(type, attributes = {}, children = []) {
   //allows passing attributes as a lone first non-type
   //argument without requiring parameter name
   //   if (isStdObj(children) && attributes == {}) {
