@@ -58,7 +58,7 @@
   </head>
 
   <body>
-    <script src="./Alxndr.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Alexandah/Alxndr.js/src/Alxndr.js"></script>
     <script>
       function bookmark(name, url, description = "") {
         return li({ noHop: "" }, [
@@ -99,13 +99,13 @@
                 ),
               ]),
               bookmarkGroup("Tools", [
-                h3("Software Dev"),
+                h3({ noHop: "" }, "Software Dev"),
                 ul([
                   bookmark("Github", "https://github.com/"),
                   bookmark("Gitlab", "https://gitlab.com/"),
                   bookmark("Typing practice", "https://www.keybr.com/"),
                 ]),
-                h3("Research"),
+                h3({ noHop: "" }, "Research"),
                 ul([
                   bookmark("Google Scholar", "https://scholar.google.com/"),
                   bookmark(
@@ -119,7 +119,7 @@
                     "Research Assistant"
                   ),
                 ]),
-                h3("AI Driven"),
+                h3({ noHop: "" }, "AI Driven"),
                 ul([
                   bookmark("OpenAI API", "https://beta.openai.com/", "GPT3"),
                   bookmark(
@@ -135,11 +135,16 @@
                 ]),
               ]),
               bookmarkGroup("Knowledge", [
-                h3("Computer Science"),
+                h3({ noHop: "" }, "Computer Science"),
                 ul([
                   bookmark("nand2tetris", "https://www.nand2tetris.org/course"),
+                  bookmark(
+                    "jsDelivr",
+                    "https://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github",
+                    "import file.js from github"
+                  ),
                 ]),
-                h3("Journals"),
+                h3({ noHop: "" }, "Journals"),
                 ul([
                   bookmark(
                     "SoS",
@@ -153,7 +158,7 @@
                 ]),
               ]),
               bookmarkGroup("Money", [
-                h3("Management"),
+                h3({ noHop: "" }, "Management"),
                 ul([
                   bookmark(
                     "Personal Capital",
@@ -169,6 +174,9 @@
         ])
       );
     </script>
-    <script type="module" src="./extension_main.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/Alexandah/mOuSe_prototype/DOMHopper/src/DOMHopperControls.js"
+    ></script>
   </body>
 </html>
