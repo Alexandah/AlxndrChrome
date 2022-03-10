@@ -1,6 +1,7 @@
 import DOMHopper from "./DOMHopper.js";
 import InputLanguage from "./InputLanguage.js";
 import KeyboardParser from "./KeyboardParser.js";
+import { get } from "./helpers.js";
 
 //First, parse to add onClick functions via classes
 //we must do this bc chrome hates inline js execution
@@ -18,6 +19,8 @@ Array.from(document.querySelectorAll(".alertOnRightClick")).forEach((node) => {
 
 //Now, set up the DOMHopper
 var domHopper = new DOMHopper();
+const startOn = get("domHopperStart");
+if (startOn != null) domHopper.setSelected();
 
 const UP = "k";
 const DOWN = "j";

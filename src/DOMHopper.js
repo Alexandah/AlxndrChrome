@@ -32,7 +32,7 @@ const CAN_LVL_DESCEND_TO_NON_DESCENDANTS = false;
 export default class DOMHopper {
   constructor() {
     // this.root = getTag("body");
-    this.root = get("domHopperStart");
+    this.root = get("domHopperRoot");
     this.selected = this.root;
     this.selected.style.outline = SELECTED_BORDER;
     this.selectedDOMLvl = 0;
