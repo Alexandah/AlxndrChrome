@@ -14,6 +14,7 @@ import {
   removeNode,
   getRandomInt,
   getDOMPath,
+  get,
 } from "./helpers.js";
 import {
   ORANGE_OUTLINE_COLOR,
@@ -30,7 +31,8 @@ const CAN_LVL_DESCEND_TO_NON_DESCENDANTS = false;
 
 export default class DOMHopper {
   constructor() {
-    this.root = getTag("body");
+    // this.root = getTag("body");
+    this.root = get("domHopperStart");
     this.selected = this.root;
     this.selected.style.outline = SELECTED_BORDER;
     this.selectedDOMLvl = 0;
@@ -162,6 +164,7 @@ export default class DOMHopper {
   }
 
   jump(dirFunc) {
+    console.log("jumping!");
     if (this.editingMode) return;
     if (this.selected != null) {
       var elementsInDir = this.getSelectedDOMLvlElements().filter(dirFunc);

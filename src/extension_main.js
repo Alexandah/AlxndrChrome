@@ -1,7 +1,6 @@
 import DOMHopper from "./DOMHopper.js";
 import InputLanguage from "./InputLanguage.js";
 import KeyboardParser from "./KeyboardParser.js";
-import { pressFunctionKey } from "./helpers.js";
 
 //First, parse to add onClick functions via classes
 //we must do this bc chrome hates inline js execution
@@ -184,9 +183,11 @@ function parseRawInputIntoControlLanguage() {
 
 //MAIN INPUT LISTENER
 document.addEventListener("keydown", (event) => {
+  console.log(event);
   var controlLanguageTokens = parseRawInputIntoControlLanguage();
   modeSettingsControls.read(controlLanguageTokens, [event]);
   controls.read(controlLanguageTokens);
 });
 
 console.log("Initialized DOMHopper Demo");
+// console.log()
